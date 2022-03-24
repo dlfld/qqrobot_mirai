@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: net.mamoe:mirai-core-utils-jvm:2.7.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/apache-maven-3.8.4/repository/net/mamoe/mirai-core-utils-jvm/2.7.0/mirai-core-utils-jvm-2.7.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/apache-maven-3.8.4/repository/net/mamoe/mirai-core-utils-jvm/2.7.0/mirai-core-utils-jvm-2.7.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/apache-maven-3.8.4/repository/net/mamoe/mirai-core-utils-jvm/2.7.0/mirai-core-utils-jvm-2.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

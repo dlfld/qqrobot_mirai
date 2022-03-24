@@ -1,0 +1,12 @@
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/job/TaskJob.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/reflects/Scanner.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/utils/HttpRequest.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/annotation/Plugin.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/pojo/VaccineMsg.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/interfaces/CommandHandle.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/MiraiJavaApplication.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/job/StartBot.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/plugins/TestPlugin.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/job/BotSave.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/pojo/Message.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/example/miraijava/handler/MyEventHandlers.java
