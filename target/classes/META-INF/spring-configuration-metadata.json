@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "idse.mirai",
+      "type": "com.idse.miraijava.pojo.MiraiConfig",
+      "sourceType": "com.idse.miraijava.pojo.MiraiConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "idse.mirai.password",
+      "type": "java.lang.String",
+      "sourceType": "com.idse.miraijava.pojo.MiraiConfig"
+    },
+    {
+      "name": "idse.mirai.plugins-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.idse.miraijava.pojo.MiraiConfig"
+    },
+    {
+      "name": "idse.mirai.qq",
+      "type": "java.lang.String",
+      "sourceType": "com.idse.miraijava.pojo.MiraiConfig"
+    },
+    {
+      "name": "idse.mirai.work-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.idse.miraijava.pojo.MiraiConfig"
+    }
+  ],
+  "hints": []
+}
