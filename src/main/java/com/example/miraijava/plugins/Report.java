@@ -1,8 +1,7 @@
 package com.example.miraijava.plugins;
 
+import com.example.miraijava.annotation.Command;
 import com.example.miraijava.annotation.Plugin;
-import com.example.miraijava.interfaces.CommandHandle;
-import net.mamoe.mirai.event.events.MessageEvent;
 
 /**
  * @Author dailinfeng
@@ -10,10 +9,12 @@ import net.mamoe.mirai.event.events.MessageEvent;
  * @Date 2022/3/24 13:46
  * @Version 1.0
  */
-@Plugin(command = "报备")
-public class Report implements CommandHandle {
-    @Override
-    public void handleCommand(MessageEvent event) {
+@Plugin
+public class Report {
 
+    @Command(command = "测试")
+    public void handleCommand() {
+        System.out.println("进来了");
     }
+
 }

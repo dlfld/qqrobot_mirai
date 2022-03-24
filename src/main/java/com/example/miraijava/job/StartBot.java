@@ -10,6 +10,8 @@ import net.mamoe.mirai.utils.BotConfiguration;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.File;
 
@@ -26,7 +28,7 @@ public class StartBot implements CommandLineRunner {
     public void run(String... args) throws Exception {
         String qq = "3152364256"; // qq号
         String password = "2441086385dlf";//密码
-        String filePath = "/work_dir"; //workdir的实际路径
+        String filePath = "/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/resources/work_dir"; //workdir的实际路径
         Bot bot = BotFactory.INSTANCE.newBot(Long.parseLong(qq), password, new BotConfiguration() {{
             //设置登录协议
             setProtocol(MiraiProtocol.ANDROID_PAD);
@@ -45,10 +47,9 @@ public class StartBot implements CommandLineRunner {
     }
 }
 
-@Component
+//@Component
 @Order(value = 2)
 class StartMiaoMiao implements CommandLineRunner {
-
     @Override
     public void run(String... args) throws Exception {
             new TaskJob().miaomiao();

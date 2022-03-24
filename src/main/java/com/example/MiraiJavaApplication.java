@@ -17,12 +17,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.File;
 
-@EnableScheduling
+//@EnableScheduling
 @SpringBootApplication
 public class MiraiJavaApplication {
     public static void main(String[] args) {
         SpringApplication.run(MiraiJavaApplication.class, args);
     }
-
-
 }
