@@ -27,7 +27,8 @@ public class MyEventHandlers extends SimpleListenerHost {
 
     @EventHandler
     public void onMessage(@NotNull MessageEvent event) throws Exception { // 可以抛出任何异常, 将在 handleException 处理
-        Set<Class<?>> annotationClasses = new Scanner().getAnnotationClasses(config.getPluginsDir(), Plugin.class);
+        System.out.println(config);
+        Set<Class<?>> annotationClasses = new Scanner().getAnnotationClasses("com.idse.miraijava.plugins", Plugin.class);
 //        找到带有Plugin 注解的类
         for (Class<?> aClass : annotationClasses) {
             Method[] declaredMethods = aClass.getDeclaredMethods();
@@ -38,14 +39,14 @@ public class MyEventHandlers extends SimpleListenerHost {
                     Command command = annotationsByType[0];
                     String commandValue = command.command();
 //                    用户发的信息
-                    String userCommand = event.getMessage().get(1) + "";
+                    String userCommand = (event.getMessage().get(1) + "");
 //                    如果命令匹配的话
-                    if (Objects.equals(userCommand.strip(), commandValue.strip())) {
+                    if (Objects.equals(userCommand.strip(), commandValue.strip()) || userCommand.strip().startsWith(commandValue.strip())) {
 //                        调用方法
                         try {
-                            method.invoke(aClass.getDeclaredConstructor().newInstance(), event);
+                            method.invoke(aClass.getDeclaredConstructor().newInstance(), event,event.getMessage().get(1) + "");
                         } catch (IllegalArgumentException illegalArgumentException) {
-                            log.error("请在命令方法上加上参数 MessageEvent event");
+                            log.error("请在命令方法上加上参数 MessageEvent event,String message");
                         }
 
                     }

@@ -43,9 +43,9 @@ public class HttpRequest {
             headers.add(extHeader);
         }
         RequestConfig requestConfig = RequestConfig.custom()
-                .setConnectionRequestTimeout(2500)
-                .setSocketTimeout(2500)
-                .setConnectTimeout(2500)
+//                .setConnectionRequestTimeout(2500)
+//                .setSocketTimeout(2500)
+//                .setConnectTimeout(2500)
                 .build();
         get.setConfig(requestConfig);
         get.setHeaders(headers.toArray(new Header[0]));
@@ -53,12 +53,13 @@ public class HttpRequest {
         CloseableHttpResponse response = httpClient.execute(get);
         HttpEntity httpEntity = response.getEntity();
         String json = EntityUtils.toString(httpEntity, StandardCharsets.UTF_8);
-        JSONObject jsonObject = JSONObject.parseObject(json);
-        System.out.println(jsonObject);
-        if ("0000".equals(jsonObject.get("code"))) {
-            return jsonObject.getString("data");
-        }
-        return "";
+        return json;
+//        JSONObject jsonObject = JSONObject.parseObject(json);
+
+//        if ("0000".equals(jsonObject.get("code"))) {
+//            return jsonObject.getString("data");
+//        }
+//        return "";
     }
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -94,7 +95,7 @@ public class HttpRequest {
         try {
             while (delayQueue.isEmpty() == false) {
                 Message take = delayQueue.take();
-                System.out.println("还有10分钟开始抢:\n"+take.getData());
+                System.out.println("还有10分钟开始抢:\n" + take.getData());
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
