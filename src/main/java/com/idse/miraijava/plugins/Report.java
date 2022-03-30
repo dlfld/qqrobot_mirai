@@ -60,8 +60,6 @@ public class Report {
             subject.sendMessage(message);
             externalResource.close();
         }
-
-
     }
 
 }
