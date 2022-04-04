@@ -1,12 +1,13 @@
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/job/TaskJob.java
-/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/Message.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/annotation/Command.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/MiraiConfig.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/utils/HttpRequest.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/VaccineMsg.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/plugins/Report.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/annotation/Plugin.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/Message.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/job/BotSave.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/job/StartBot.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/reflects/Scanner.java
-/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/VaccineMsg.java
-/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/plugins/Report.java
+/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/pojo/HSBG.java
 /Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/handler/MyEventHandlers.java
-/Users/dailinfeng/Desktop/小项目/mirai-java/src/main/java/com/idse/miraijava/annotation/Plugin.java

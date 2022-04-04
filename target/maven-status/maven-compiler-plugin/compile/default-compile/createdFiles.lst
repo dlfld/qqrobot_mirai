@@ -1,5 +1,6 @@
 com/idse/miraijava/job/BotSave.class
 META-INF/spring-configuration-metadata.json
+com/idse/miraijava/pojo/HSBG.class
 com/idse/miraijava/utils/HttpRequest.class
 com/idse/miraijava/plugins/Report.class
 com/idse/miraijava/utils/HttpRequest$1.class
