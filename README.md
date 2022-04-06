@@ -55,7 +55,7 @@
 4. 在项目中创建插件所在的包，并进行插件添加。
 5. 启动项目✅
 
-
+<a href="https://gitee.com/dlfdd/mirai-java-demo.git">demo项目</a>
 
 #### 思想
 
