@@ -30,7 +30,7 @@
         <dependency>
             <groupId>io.github.dailinfeng66</groupId>
             <artifactId>mirai-java</artifactId>
-            <version>0.0.27</version>
+            <version>0.0.28</version>
         </dependency>
 ```
 2. 下载项目的work_dir 

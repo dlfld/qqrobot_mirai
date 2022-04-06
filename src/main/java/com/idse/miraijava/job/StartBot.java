@@ -9,22 +9,15 @@ import net.mamoe.mirai.event.EventChannel;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.event.events.BotEvent;
 import net.mamoe.mirai.utils.BotConfiguration;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
+
 import java.io.File;
 
-@Component
 @Slf4j
 public class StartBot {
 
-    public void run(MiraiConfig miraiConfig) throws Exception {
+    public void run(MiraiConfig miraiConfig)   {
+        BotSave.setMiraiConfig(miraiConfig);
         new Thread(() -> {
             log.info(miraiConfig.toString());
             String qq = miraiConfig.getQq(); // qq号
@@ -37,7 +30,7 @@ public class StartBot {
                 setWorkingDir(new File(filePath));
                 //设置cache目录
                 setCacheDir(new File("cache"));
-                //Bot 默认使用全随机的设备信息。
+                //Bot 默认使用全随机的设备信息
                 fileBasedDeviceInfo("device.json");
             }}).getBot();
             BotSave.setBot(bot);
@@ -46,4 +39,5 @@ public class StartBot {
             channel.registerListenerHost(new MyEventHandlers());
         }).start();
     }
+
 }

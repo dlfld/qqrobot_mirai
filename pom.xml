@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.github.dailinfeng66</groupId>
     <artifactId>mirai-java</artifactId>
-    <version>0.0.27</version>
+    <version>0.0.28</version>
     <name>mirai-java</name>
     <description>mirai-java</description>
     <properties>
