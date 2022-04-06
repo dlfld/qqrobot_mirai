@@ -57,6 +57,8 @@
 
 <a href="https://gitee.com/dlfdd/mirai-java-demo.git">demo项目</a>
 
+里面包含了work_dir工作目录，是一个基本的机器人。
+
 #### 思想
 
      一个插件对应的是一个实体类，一个实体类里面可以实现多个命令，每个命令是一个单独的方法
