@@ -2,12 +2,7 @@ package com.idse.miraijava.job;
 
 import net.mamoe.mirai.Bot;
 
-/**
- * @Author dailinfeng
- * @Description TODO
- * @Date 2022/1/17 10:17 AM
- * @Version 1.0
- */
+
 public class BotSave {
     public static Bot bot = null;
 

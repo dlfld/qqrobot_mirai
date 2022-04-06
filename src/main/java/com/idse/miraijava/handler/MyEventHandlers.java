@@ -14,12 +14,7 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * @Author dailinfeng
- * @Description TODO
- * @Date 2021/9/18 12:59 下午
- * @Version 1.0
- */
+
 @Slf4j
 public class MyEventHandlers extends SimpleListenerHost {
     @Resource

@@ -1,11 +1,5 @@
 package com.idse.miraijava.reflects;
 
-/**
- * @Author dailinfeng
- * @Description TODO
- * @Date 2021/9/18 11:22 下午
- * @Version 1.0
- */
 
 
 import java.io.File;
