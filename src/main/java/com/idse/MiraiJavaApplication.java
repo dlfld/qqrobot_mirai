@@ -14,7 +14,6 @@ public class MiraiJavaApplication {
     public static void main(String[] args) {
 
 
-
         SpringApplication.run(MiraiJavaApplication.class, args);
 
     }
