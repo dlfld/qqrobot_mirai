@@ -8,12 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan({"com.idse.miraijava"})
-//@SpringBootApplication
 public class MiraiJavaApplication {
 
     public static void main(String[] args) {
-
-
         SpringApplication.run(MiraiJavaApplication.class, args);
 
     }

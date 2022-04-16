@@ -2,6 +2,6 @@ com.idse
 com.idse.miraijava.annotation
 com.idse.miraijava.handler
 com.idse.miraijava.job
-com.idse.miraijava.plugins
 com.idse.miraijava.pojo
 com.idse.miraijava.reflects
+com.idse.miraijava.utils

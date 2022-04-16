@@ -1,7 +1,7 @@
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/job/BotSave.java
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/handler/MyEventHandlers.java
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/reflects/Scanner.java
-/Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/plugins/Report.java
+/Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/utils/SpringContextUtil.java
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/pojo/MiraiConfig.java
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/job/StartBot.java
 /Users/dailinfeng/Desktop/小项目/mirai-java-framework/src/main/java/com/idse/miraijava/annotation/Command.java

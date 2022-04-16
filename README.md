@@ -29,8 +29,8 @@
 ```xml
         <dependency>
             <groupId>io.github.dailinfeng66</groupId>
-            <artifactId>mirai-java</artifactId>
-            <version>0.0.28</version>
+            <artifactId>miraijava-spring-boot-starter</artifactId>
+            <version>0.0.30</version>
         </dependency>
 ```
 2. 下载项目的work_dir 
@@ -58,7 +58,21 @@
 <a href="https://gitee.com/dlfdd/mirai-java-demo.git">demo项目</a>
 
 里面包含了work_dir工作目录，是一个基本的机器人。
+```java
+//单个插件只需要这样编写即可
+@Plugin
+public class TestPlugin {
+    @Resource
+    BigStudyService bigStudyService;
 
+    @Command(command = "测试")
+    public void ceshi(MessageEvent event, String msg) throws IOException {
+        bigStudyService.getPaper("母猪的产后护理");
+        System.out.println("进来了 收到了消息 测试");
+    }
+}
+
+```
 #### 思想
 
      一个插件对应的是一个实体类，一个实体类里面可以实现多个命令，每个命令是一个单独的方法
