@@ -2,6 +2,7 @@ package com.idse.miraijava.pojo;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import net.mamoe.mirai.utils.BotConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,4 +15,6 @@ public class MiraiConfig {
     String password;
     String workDir;
     String pluginsDir;
+    // QQ登陆的协议
+    BotConfiguration.MiraiProtocol protocol;
 }

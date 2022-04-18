@@ -16,7 +16,7 @@ import java.io.File;
 @Slf4j
 public class StartBot {
 
-    public void run(MiraiConfig miraiConfig)   {
+    public void run(MiraiConfig miraiConfig) {
         BotSave.setMiraiConfig(miraiConfig);
         new Thread(() -> {
             log.info(miraiConfig.toString());
@@ -25,7 +25,8 @@ public class StartBot {
             String filePath = miraiConfig.getWorkDir(); //workdir的实际路径
             Bot bot = BotFactory.INSTANCE.newBot(Long.parseLong(qq), password, new BotConfiguration() {{
                 //设置登录协议
-                setProtocol(MiraiProtocol.ANDROID_PAD);
+                //setProtocol(MiraiProtocol.ANDROID_PAD);
+                setProtocol(miraiConfig.getProtocol());
                 //设置工具目录
                 setWorkingDir(new File(filePath));
                 //设置cache目录
