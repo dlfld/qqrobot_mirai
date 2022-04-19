@@ -44,6 +44,7 @@
            new StartBot().run(new MiraiConfig()
                    .setQq("QQ")
                    .setPassword("QQ密码")
+                   .setProtocol(BotConfiguration.MiraiProtocol.ANDROID_PAD) // 设置登陆协议
                    .setPluginsDir("com.idse.miraijava.plugins") //插件包的路径，插件包需要自己创建 类似于Spring Mvc中的controller包
                    .setWorkDir("src/main/resources/work_dir")); //work_dir的路径
            SpringApplication.run(MiraiTestApplication.class, args);
