@@ -16,5 +16,18 @@ public class MiraiConfig {
     String workDir;
     String pluginsDir;
     // QQ登陆的协议
-    BotConfiguration.MiraiProtocol protocol;
+    BotConfiguration.MiraiProtocol protocol = null;
+
+    /**
+     * 默认是pad协议登陆
+     * @return
+     */
+    public BotConfiguration.MiraiProtocol getProtocol() {
+        boolean haveProtocol = this.protocol == null;
+        if (haveProtocol) {
+            return protocol;
+        }
+        return BotConfiguration.MiraiProtocol.ANDROID_PAD;
+    }
+
 }

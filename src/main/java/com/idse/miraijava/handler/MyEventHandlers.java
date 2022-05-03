@@ -2,6 +2,7 @@ package com.idse.miraijava.handler;
 
 import com.idse.miraijava.annotation.Command;
 import com.idse.miraijava.annotation.Plugin;
+import com.idse.miraijava.handler.utils.PluginUtils;
 import com.idse.miraijava.job.BotSave;
 import com.idse.miraijava.pojo.MiraiConfig;
 import com.idse.miraijava.reflects.Scanner;
@@ -32,37 +33,9 @@ public class MyEventHandlers extends SimpleListenerHost {
             Method[] declaredMethods = aClass.getDeclaredMethods();
             //  扫描类中的每一个方法
             for (Method method : declaredMethods) {
-                Command[] annotationsByType = method.getAnnotationsByType(Command.class);
-                if (annotationsByType.length > 0) {
-                    Command command = annotationsByType[0];
-                    String commandValue = command.command();
-//                    用户发的信息
-                    String userCommand = (event.getMessage().get(1) + "");
-//                    如果命令匹配的话
-                    if (Objects.equals(userCommand.strip(), commandValue.strip()) || userCommand.strip().startsWith(commandValue.strip())) {
-//                        调用方法
-                        try {
-                            //spring方式调用
-                            //根据全类名获取当前类的短类名
-                            String shortClassName = ClassUtils.getShortName(aClass.getName());
-                            /**
-                             *  这个方法是Sping 将类放进容器时生成名字的工具类
-                             *   其命名规则是：
-                             *      如果类名第一个是大写第二个是小写则将第一个转化为小写
-                             *      如果类名前两个都是大写那么则直接是类名
-                             */
-                            String className = Introspector.decapitalize(shortClassName);
-                            Object pluginClass = SpringContextUtil.getBean(className);
-                            Method method_spring = ReflectionUtils.findMethod(pluginClass.getClass(), method.getName(), MessageEvent.class, String.class);
-                            ReflectionUtils.invokeMethod(method_spring, pluginClass, event, event.getMessage().get(1) + "");
-                            //spring方式调用
-                            //method.invoke(aClass.getDeclaredConstructor().newInstance(), event, event.getMessage().get(1) + "");
-                        } catch (IllegalArgumentException illegalArgumentException) {
-                            log.error("请在命令方法上加上参数 MessageEvent event,String message");
-                        }
-
-                    }
-                }
+                //处理命令式方法
+                PluginUtils.handeCommand(method, aClass, event);
+                
             }
         }
     }
