@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"com.idse"},{"l":"com.idse.miraijava.annotation"},{"l":"com.idse.miraijava.handler"},{"l":"com.idse.miraijava.job"},{"l":"com.idse.miraijava.pojo"},{"l":"com.idse.miraijava.reflects"},{"l":"com.idse.miraijava.utils"},{"l":"所有程序包","u":"allpackages-index.html"}];updateSearchResults();

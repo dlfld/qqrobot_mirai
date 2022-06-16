@@ -14,12 +14,11 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
 
-import javax.annotation.Resource;
-import java.beans.Introspector;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 
 @Slf4j
@@ -33,9 +32,16 @@ public class MyEventHandlers extends SimpleListenerHost {
             Method[] declaredMethods = aClass.getDeclaredMethods();
             //  扫描类中的每一个方法
             for (Method method : declaredMethods) {
-                //处理命令式方法
-                PluginUtils.handeCommand(method, aClass, event);
-                
+                CompletableFuture<Void> handeCommandFuture = CompletableFuture.runAsync(() -> {
+                    //处理命令式方法
+                    PluginUtils.handeCommand(method, aClass, event);
+                });
+                CompletableFuture<Void> handleOnMessageFuture = CompletableFuture.runAsync(() -> {
+                    //处理全部消息的情况
+                    PluginUtils.handleOnMessage(method, aClass, event);
+                });
+                handeCommandFuture.get();
+                handleOnMessageFuture.get();
             }
         }
     }
