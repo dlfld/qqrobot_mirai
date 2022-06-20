@@ -8,12 +8,12 @@
         <version>2.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <!--    <groupId>io.github.dailinfeng66</groupId>-->
-    <!--    <artifactId>miraijava-spring-boot-starter</artifactId>-->
-    <!--    <version>0.0.30</version>-->
-    <groupId>dailinfeng66</groupId>
-    <artifactId>miraijava</artifactId>
-    <version>0.0.32</version>
+        <groupId>io.github.dailinfeng66</groupId>
+        <artifactId>miraijava-spring-boot-starter</artifactId>
+        <version>0.0.32</version>
+<!--    <groupId>dailinfeng66</groupId>-->
+<!--    <artifactId>miraijava</artifactId>-->
+<!--    <version>0.0.32</version>-->
     <name>mirai-java</name>
     <description>mirai-java</description>
     <properties>
