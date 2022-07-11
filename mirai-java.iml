@@ -26,7 +26,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.72" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:2.0.9" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2-extension:2.0.9" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.14" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
@@ -65,7 +67,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: io.netty:netty-all:4.1.67.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.logging.log4j:log4j-api:2.14.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" level="project" />
-    <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.5.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.5.4" level="project" />

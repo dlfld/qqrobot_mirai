@@ -20,7 +20,11 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-
+/**
+ * todo
+ *      将命令处理改为注册式的方法而不是每一个命令来就扫描一次
+ *
+ */
 @Slf4j
 public class MyEventHandlers extends SimpleListenerHost {
     @EventHandler
@@ -32,10 +36,12 @@ public class MyEventHandlers extends SimpleListenerHost {
             Method[] declaredMethods = aClass.getDeclaredMethods();
             //  扫描类中的每一个方法
             for (Method method : declaredMethods) {
+
                 CompletableFuture<Void> handeCommandFuture = CompletableFuture.runAsync(() -> {
                     //处理命令式方法
                     PluginUtils.handeCommand(method, aClass, event);
                 });
+
                 CompletableFuture<Void> handleOnMessageFuture = CompletableFuture.runAsync(() -> {
                     //处理全部消息的情况
                     PluginUtils.handleOnMessage(method, aClass, event);

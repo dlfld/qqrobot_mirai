@@ -17,9 +17,14 @@ public class MiraiConfig {
     String pluginsDir;
     // QQ登陆的协议
     BotConfiguration.MiraiProtocol protocol = null;
+    /**
+     * 命令分割符
+     */
+    String commandSplit = "#";
 
     /**
      * 默认是pad协议登陆
+     *
      * @return
      */
     public BotConfiguration.MiraiProtocol getProtocol() {

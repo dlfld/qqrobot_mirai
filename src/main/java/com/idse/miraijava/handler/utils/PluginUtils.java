@@ -2,6 +2,7 @@ package com.idse.miraijava.handler.utils;
 
 import com.idse.miraijava.annotation.Command;
 import com.idse.miraijava.annotation.OnMessage;
+import com.idse.miraijava.job.BotSave;
 import com.idse.miraijava.utils.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.event.events.MessageEvent;
@@ -30,8 +31,11 @@ public class PluginUtils {
             String commandValue = command.command();
 //                    用户发的信息
             String userCommand = event.getMessage().get(1) + "";
-//                    如果命令匹配的话
-            if (Objects.equals(userCommand.strip(), commandValue.strip()) || userCommand.strip().startsWith(commandValue.strip())) {
+//                    如果命令匹配的话 消息为纯命令或者是开头是命令加上分隔符开头
+            // 命令分隔符
+            String commandSplit = BotSave.getMiraiConfig().getCommandSplit();
+            if (Objects.equals(userCommand.strip(), commandValue.strip()) ||
+                    userCommand.strip().startsWith(commandValue.strip() + commandSplit)) {
 //                        调用方法
                 try {
                     //spring方式调用
