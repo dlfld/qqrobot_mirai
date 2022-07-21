@@ -14,8 +14,8 @@ public class MiraiJavaApplication {
 
     public static void main(String[] args) {
         new StartBot().run(new MiraiConfig()
-                .setQq("460796757")
-                .setPassword("2441086385dlf..")
+                .setQq("")
+                .setPassword("")
                 .setPluginsDir("com.idse.miraijava.plugins")
                 .setProtocol(BotConfiguration.MiraiProtocol.ANDROID_PAD)
                 //.setWorkDir("/home/dlf/runcode/work_dir"));
