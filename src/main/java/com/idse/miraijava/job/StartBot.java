@@ -11,7 +11,6 @@ import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.event.events.BotEvent;
 import net.mamoe.mirai.utils.BotConfiguration;
 
-
 import java.io.File;
 
 @Slf4j
@@ -19,7 +18,8 @@ public class StartBot {
 
     public void run(MiraiConfig miraiConfig) {
         BotSave.setMiraiConfig(miraiConfig);
-        new Thread(() -> {
+        // 登陆QQ线程
+        Thread loginQQ = new Thread(() -> {
             log.info(miraiConfig.toString());
             String qq = miraiConfig.getQq(); // qq号
             String password = miraiConfig.getPassword();//密码
@@ -39,7 +39,13 @@ public class StartBot {
             bot.login();
             EventChannel<Event> channel = GlobalEventChannel.INSTANCE.filter(ev -> ev instanceof BotEvent && ((BotEvent) ev).getBot().getId() == Long.parseLong(qq)); // 筛选来自某一个 Bot 的事件
             channel.registerListenerHost(new MyEventHandlers());
-        }).start();
+        });
+        // 扫描插件线程
+        Thread scanPlugins = new Thread(() -> {
+            new PluginScanner().scanPlugins();
+        });
+        loginQQ.start();
+        scanPlugins.start();
     }
 
 }

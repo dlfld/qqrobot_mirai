@@ -3,12 +3,13 @@ package com.idse.miraijava.handler.utils;
 import com.idse.miraijava.annotation.Command;
 import com.idse.miraijava.annotation.OnMessage;
 import com.idse.miraijava.job.BotSave;
+import com.idse.miraijava.pojo.PluginPair;
 import com.idse.miraijava.utils.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.event.events.MessageEvent;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
-
 
 import java.beans.Introspector;
 import java.lang.reflect.Method;
@@ -18,9 +19,30 @@ import java.util.Objects;
 @Slf4j
 public class PluginUtils {
 
-    public static void invokeMethod(){
-
+    /**
+     * 通过反射调用方法
+     *
+     * @param pluginPair 方法对象
+     * @param event      消息事件
+     */
+    public static void funcCall(@NotNull PluginPair pluginPair, @NotNull MessageEvent event) {
+        try {
+            //获取到用户发送的信息
+            String message = event.getMessage().get(1) + "";
+            //spring方式调用
+            //根据全类名获取当前类的短类名
+            String shortClassName = ClassUtils.getShortName(pluginPair.getClazz().getName());
+            String className = Introspector.decapitalize(shortClassName);
+            Object pluginClass = SpringContextUtil.getBean(className);
+            Method methodSpring = ReflectionUtils.findMethod(pluginClass.getClass(), pluginPair.getMethod().getName(), MessageEvent.class, String.class);
+            assert methodSpring != null;
+            ReflectionUtils.invokeMethod(methodSpring, pluginClass, event, message);
+        } catch (IllegalArgumentException illegalArgumentException) {
+            log.error("请在命令方法上加上参数 MessageEvent event,String message");
+            illegalArgumentException.printStackTrace();
+        }
     }
+
     /**
      * 处理Command注解对应的功能
      *

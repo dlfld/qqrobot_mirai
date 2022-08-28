@@ -1,16 +1,12 @@
 package com.idse.miraijava.handler;
 
-import com.idse.miraijava.annotation.Command;
-import com.idse.miraijava.annotation.Plugin;
 import com.idse.miraijava.handler.utils.PluginUtils;
-import com.idse.miraijava.job.BotSave;
 import com.idse.miraijava.job.PluginSave;
-import com.idse.miraijava.pojo.MiraiConfig;
 import com.idse.miraijava.pojo.PluginPair;
-import com.idse.miraijava.reflects.Scanner;
 import com.idse.miraijava.utils.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
-import net.mamoe.mirai.event.*;
+import net.mamoe.mirai.event.EventHandler;
+import net.mamoe.mirai.event.SimpleListenerHost;
 import net.mamoe.mirai.event.events.MessageEvent;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ClassUtils;
@@ -18,10 +14,6 @@ import org.springframework.util.ReflectionUtils;
 
 import java.beans.Introspector;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * todo
@@ -34,24 +26,10 @@ public class MyEventHandlers extends SimpleListenerHost {
         //获取到用户发送的信息
         String message = event.getMessage().get(1) + "";
         for (PluginPair pluginPair : PluginSave.getOnMessageMethods()) {
-
-            try {
-                //spring方式调用
-                //根据全类名获取当前类的短类名
-                String shortClassName = ClassUtils.getShortName(pluginPair.getClazz().getName());
-                String className = Introspector.decapitalize(shortClassName);
-                Object pluginClass = SpringContextUtil.getBean(className);
-                Method methodSpring = ReflectionUtils.findMethod(pluginClass.getClass(), pluginPair.getMethod().getName(), MessageEvent.class, String.class);
-                assert methodSpring != null;
-                ReflectionUtils.invokeMethod(methodSpring, pluginClass, event, message);
-
-            } catch (IllegalArgumentException illegalArgumentException) {
-                log.error("请在命令方法上加上参数 MessageEvent event,String message");
-                illegalArgumentException.printStackTrace();
-            }
+            PluginUtils.funcCall(pluginPair, event);
         }
         PluginPair methodByCommand = PluginSave.getMethodByCommand(message);
-
+        PluginUtils.funcCall(methodByCommand, event);
 //        MiraiConfig config = BotSave.getMiraiConfig();
 //        Set<Class<?>> annotationClasses = new Scanner().getAnnotationClasses(config.getPluginsDir(), Plugin.class);
 ////        找到带有Plugin 注解的类

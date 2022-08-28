@@ -17,7 +17,9 @@ public class PluginScanner {
     /**
      * 扫描所有的组件注解
      */
-    public void scanPlugins() throws Exception {
+    @SneakyThrows
+    public void scanPlugins() {
+
         MiraiConfig config = BotSave.getMiraiConfig();
         //找到带有Plugin注解的类
         Set<Class<?>> annotationClasses = new Scanner().getAnnotationClasses(config.getPluginsDir(), Plugin.class);
@@ -47,7 +49,7 @@ public class PluginScanner {
                  */
                 OnMessage[] onMessages = method.getAnnotationsByType(OnMessage.class);
                 if (onMessages.length > 0) {
-                    PluginSave.addOnMessageMethod(method);
+                    PluginSave.addOnMessageMethod(new PluginPair().setMethod(method).setClazz(aClass));
                 }
             }
 
