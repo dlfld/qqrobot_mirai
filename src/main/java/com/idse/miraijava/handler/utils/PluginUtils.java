@@ -17,11 +17,16 @@ import java.util.Objects;
 
 @Slf4j
 public class PluginUtils {
+
+    public static void invokeMethod(){
+
+    }
     /**
      * 处理Command注解对应的功能
      *
      * @param method
      */
+    @Deprecated
     public static void handeCommand(Method method, Class<?> aClass, MessageEvent event) {
 
         //获取加了command注解的方法
@@ -67,6 +72,7 @@ public class PluginUtils {
      * @param aClass
      * @param event
      */
+    @Deprecated
     public static void handleOnMessage(Method method, Class<?> aClass, MessageEvent event) {
         //获取注解为OnMessage的注解
         OnMessage[] annotationsByType = method.getAnnotationsByType(OnMessage.class);

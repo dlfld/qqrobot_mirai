@@ -5,6 +5,7 @@ import com.idse.miraijava.pojo.MiraiConfig;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
+import net.mamoe.mirai.event.Event;
 import net.mamoe.mirai.event.EventChannel;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.event.events.BotEvent;
@@ -36,7 +37,7 @@ public class StartBot {
             }}).getBot();
             BotSave.setBot(bot);
             bot.login();
-            EventChannel channel = GlobalEventChannel.INSTANCE.filter(ev -> ev instanceof BotEvent && ((BotEvent) ev).getBot().getId() == Long.parseLong(qq)); // 筛选来自某一个 Bot 的事件
+            EventChannel<Event> channel = GlobalEventChannel.INSTANCE.filter(ev -> ev instanceof BotEvent && ((BotEvent) ev).getBot().getId() == Long.parseLong(qq)); // 筛选来自某一个 Bot 的事件
             channel.registerListenerHost(new MyEventHandlers());
         }).start();
     }
