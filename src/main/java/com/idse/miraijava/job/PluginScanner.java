@@ -19,7 +19,6 @@ public class PluginScanner {
      */
     @SneakyThrows
     public void scanPlugins() {
-
         MiraiConfig config = BotSave.getMiraiConfig();
         //找到带有Plugin注解的类
         Set<Class<?>> annotationClasses = new Scanner().getAnnotationClasses(config.getPluginsDir(), Plugin.class);
@@ -29,7 +28,7 @@ public class PluginScanner {
             Method[] declaredMethods = aClass.getDeclaredMethods();
 
             for (Method method : declaredMethods) {
-                /**
+                /*
                  * 获取命令式方法 start
                  */
                 //获取加了command注解的方法
@@ -42,10 +41,8 @@ public class PluginScanner {
 //                添加当前命令和方法进入全局的map中
                     PluginSave.addCommandMethod(commandValue, new PluginPair().setMethod(method).setClazz(aClass));
                 }
-
-
-                /**
-                 * 获取命令式方法 end
+                /*
+                  获取命令式方法 end
                  */
                 OnMessage[] onMessages = method.getAnnotationsByType(OnMessage.class);
                 if (onMessages.length > 0) {

@@ -1,13 +1,14 @@
 package com.idse.miraijava.job;
 
 import com.idse.miraijava.pojo.PluginPair;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+@Slf4j
 public class PluginSave {
     /**
      * 命令对应方法存储
@@ -76,6 +77,7 @@ public class PluginSave {
      */
     public static boolean addCommandMethod(@NotNull String command, @NotNull PluginPair pluginPair) {
         commandMethod.put(command, pluginPair);
+        log.info("添加插件-->" + command);
         return true;
     }
 }

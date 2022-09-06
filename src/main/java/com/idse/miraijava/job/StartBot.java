@@ -44,8 +44,9 @@ public class StartBot {
         Thread scanPlugins = new Thread(() -> {
             new PluginScanner().scanPlugins();
         });
-        loginQQ.start();
         scanPlugins.start();
+        loginQQ.start();
+
     }
 
 }

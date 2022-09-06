@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 
-
 @Target(ElementType.TYPE)  //作用在类上
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
